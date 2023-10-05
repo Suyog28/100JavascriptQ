@@ -7,4 +7,4 @@ function multplicationTable(num, range){
     }
 }
 
-multplicationTable(2,10)
+multplicationTable(8,20)
