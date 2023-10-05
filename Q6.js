@@ -24,7 +24,7 @@ function recurusionFactorials(number){
         throw new Error("Input number is positive")
     }
 
-    if(number === 0 || number <= 0){
+    if(number === 0 || number === 1){
         return 1;
     }
 
