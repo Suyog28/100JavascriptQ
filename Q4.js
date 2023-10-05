@@ -2,7 +2,9 @@
 
 function oddEvenNumChecked(num){
    
-
+if(typeof num !== Number){
+    console.log("Only Number is allowed")
+}
     if(num % 2 == 0 ){
         console.log("number is even:", num);
     } else{
@@ -10,4 +12,4 @@ function oddEvenNumChecked(num){
     }
 }
 
-oddEvenNumChecked(12);
+oddEvenNumChecked("a");
