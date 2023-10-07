@@ -21,5 +21,25 @@ function amstrongNumber(numberInput){
      return false
    }
 
+   function amstrong(numberInput){
+      const num = numberInput.length;
 
+      let sum = 0;
+   let temp = numberInput;
+
+   while(temp > 0){
+let reminder = temp % 10;
+ sum += reminder ** num;
+ //remove last element 
+ temp = parseInt(temp/10);
+   }
+   if (sum == numberInput) {
+      console.log(`${numberInput} is an Armstrong number`);
+  }
+  else {
+      console.log(`${numberInput} is not an Armstrong number.`);
+  }
+   }
+
+   amstrong(153)
 console.log(amstrongNumber(153))
