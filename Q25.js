@@ -6,6 +6,7 @@ let a ,b ;
 // console.log("a">"b")
 
 function alphabeticalChecked(inputString){
+    inputString = inputString.replace(/ /g, '')
      inputString = inputString.toLowerCase();
      let splitString = inputString.split('');
      for(let i=0; i<splitString.length -1 ; i++){
@@ -18,5 +19,5 @@ function alphabeticalChecked(inputString){
   return true;
 }
 
-console.log(alphabeticalChecked("abcde"))
+console.log(alphabeticalChecked("a bcde"))
 console.log(alphabeticalChecked("adnsjb"))
