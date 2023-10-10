@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Manupulations</title>
+    <style>
+        .container{
+            text-align: center;
+            border: 1px solid gray;
+            padding: 20px;
+        }
+
+        .button{
+            padding: 30px;
+            border-radius: 8px;
+        }
+
+        body{
+            background-color: #1f1f1f;
+        }
+
+        .heading1{
+            color: white;
+        }
+        .Count{
+            font-size: 40px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="heading1">Counter Project</h1>
+        <span class="Count heading1">0</span></br>
+        <button class="Increment" onclick="incrementBtn()">Increment</button>
+        <button class="SetZero" onclick="SetZeroBtn()">Set Zero</button>
+        <button class="Decrement" onclick="decrementBtn()">Decrement</button>
+       
+    </div>
+<script>
+
+
+const count = document.querySelector("span");
+const increment = document.querySelector(".Increment");
+const decrement = document.querySelector(".Decrement");
+const SetZero = document.querySelector(".SetZero");
+let num = 0;
+
+function incrementBtn(){
+        count.innerHTML = num++;   
+}
+
+function decrementBtn(){
+        count.innerHTML = num--;   
+}
+
+
+function SetZeroBtn(){
+        count.innerHTML = 0
+}
+
+
+
+
+
+increment.addEventListener("click", incrementBtn());
+decrement.addEventListener("click", decrementBtn());
+SetZero.addEventListener("click", SetZeroBtn());
+
+
+     
+
+    
+
+</script>
+</body>
+</html>
