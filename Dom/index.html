@@ -9,6 +9,7 @@
             text-align: center;
             border: 1px solid gray;
             padding: 20px;
+            margin-bottom: 20px;
         }
 
         .button{
@@ -26,6 +27,21 @@
         .Count{
             font-size: 40px;
         }
+
+        .card{
+            color: white;
+            display: flex;
+            text-align: center;
+            justify-content: center;
+            gap:20px;
+        }
+
+        .card_item{
+            border: 1px solid white;
+            padding: 20px;
+        }
+        
+
     </style>
 </head>
 <body>
@@ -34,11 +50,40 @@
         <span class="Count heading1">0</span></br>
         <button class="Increment" onclick="incrementBtn()">Increment</button>
         <button class="SetZero" onclick="SetZeroBtn()">Set Zero</button>
-        <button class="Decrement" onclick="decrementBtn()">Decrement</button>
-       
+        <button class="Decrement" onclick="decrementBtn()">Decrement</button>    
     </div>
+
+    <section>
+    <div class="card" >
+        <div class="card_item">
+            <h1>Suyog Muley</h1>
+            <p>Pune</p>
+        </div>
+        <div class="card_item">
+            <h1>Suyog Muley</h1>
+            <p>Pune</p>
+        </div>
+        <div class="card_item">
+            <h1>Suyog Muley</h1>
+            <p>Pune</p>
+        </div>
+        <div class="card_item">
+            <h1>Suyog Muley</h1>
+            <p>Pune</p>
+        </div>
+    </div>
+  <button>Hide</button>
+    </section>
 <script>
 
+
+const card = document.querySelector(".card");
+const card_item = document.querySelector(".card_item");
+const hideBtn = document.querySelector("button");
+
+hideBtn.addEventListener("click", ()=>{
+    document.style.display="none"
+})
 
 const count = document.querySelector("span");
 const increment = document.querySelector(".Increment");
