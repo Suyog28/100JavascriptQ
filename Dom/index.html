@@ -10,6 +10,8 @@
             border: 1px solid gray;
             padding: 20px;
             margin-bottom: 20px;
+           color: white;
+
         }
 
         .button{
@@ -34,14 +36,22 @@
             text-align: center;
             justify-content: center;
             gap:20px;
+            flex-direction: column;
+            margin-bottom: 20px;
+           
         }
 
         .card_item{
             border: 1px solid white;
             padding: 20px;
+            flex-wrap: wrap;
         }
         
-
+        .btn{
+            padding: 20px;
+            text-align: center;
+           
+        }
     </style>
 </head>
 <body>
@@ -54,35 +64,32 @@
     </div>
 
     <section>
-    <div class="card" >
+    <div class="container" >
         <div class="card_item">
             <h1>Suyog Muley</h1>
             <p>Pune</p>
         </div>
-        <div class="card_item">
-            <h1>Suyog Muley</h1>
-            <p>Pune</p>
-        </div>
-        <div class="card_item">
-            <h1>Suyog Muley</h1>
-            <p>Pune</p>
-        </div>
-        <div class="card_item">
-            <h1>Suyog Muley</h1>
-            <p>Pune</p>
-        </div>
+       <div>
+        <button id="btn">Hide</button>
+       </div>
     </div>
-  <button>Hide</button>
     </section>
+   
 <script>
 
 
-const card = document.querySelector(".card");
+const cont = document.querySelector(".container");
 const card_item = document.querySelector(".card_item");
-const hideBtn = document.querySelector("button");
+const hideBtn = document.querySelector("#btn");
 
 hideBtn.addEventListener("click", ()=>{
-    document.style.display="none"
+ if(card_item.style.display == 'block'){
+    card_item.style.display = 'none'
+   hideBtn.innerText = "Show Content"
+ } else {
+    card_item.style.display = 'block'
+    hideBtn.innerText = "Hide Catent"
+ }
 })
 
 const count = document.querySelector("span");
@@ -103,9 +110,6 @@ function decrementBtn(){
 function SetZeroBtn(){
         count.innerHTML = 0
 }
-
-
-
 
 
 increment.addEventListener("click", incrementBtn());
