@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Theme Switcher</title>
     <style>
-        :root{
-            --background-color:#232323;
-            --text-color:white;
+        :root {
+            --background-color: #232323;
+            --text-color: white;
         }
 
-        body{
+        body {
             background-color: var(--background-color);
             color: var(--text-color);
             display: grid;
@@ -20,11 +21,12 @@
             font-family: 'Roboto';
 
         }
-        .container{
-             display: flex;
-             gap: 1em;
 
-             .switch{
+        .container {
+            display: flex;
+            gap: 1em;
+
+            .switch {
                 width: 75px;
                 background: #2f2f2f;
                 border-radius: 5em;
@@ -32,22 +34,23 @@
                 align-items: center;
                 padding: .5em;
                 cursor: pointer;
-             }
+            }
 
-             .handle{
+            .handle {
                 border-radius: 50%;
                 width: 30px;
                 height: 30px;
                 background: white;
                 transition: transform .3s;
-             }
+            }
         }
 
-        .move-right{
+        .move-right {
             transform: translateX(45px);
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <p class="label">Dark</p>
@@ -62,21 +65,31 @@
 
 
 
-            const switchBtn = document.getElementById("switch") 
-            const handleBtn = document.getElementById("handle") 
-            
-            let switchComment = 0; //0 is Dark, 1 is light
+        const switchBtn = document.getElementById("switch")
+        const handleBtn = document.getElementById("handle")
 
-            function toggleMode(){
-                if(switchComment === 0){
-                    document.documentElement.style.setProperty("--background-color", "white")
-                    document.documentElement.style.setProperty("--text-color", "black")
-                }
+        let switchComment = 0; //0 is Dark, 1 is light
+
+        function toggleMode() {
+            if (switchComment === 0) {
+                document.documentElement.style.setProperty("--background-color", "white")
+                document.documentElement.style.setProperty("--text-color", "black")
+                handleBtn.classList.add("move-right");
+                switchComment = 1;
+
+            } else {
+
+                document.documentElement.style.setProperty("--background-color", "black")
+                document.documentElement.style.setProperty("--text-color", "white")
+                handleBtn.classList.remove("move-right")
+                switchComment = 0
             }
+        }
 
 
-            switchBtn.addEventListener("click", toggleMode)
+        switchBtn.addEventListener("click", toggleMode)
 
     </script>
 </body>
+
 </html>
