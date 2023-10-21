@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Loader</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        justify-content: center;
+        text-align: center;
+        height: 100vh;
+        padding: 0;
+        margin: 0;
+      }
+
+      .splash {
+        background: linear-gradient(
+          45deg,
+          rgb(139, 159, 238),
+          rgb(188, 75, 75)
+        );
+
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        display: grid;
+        place-content: center;
+        transition: transform;
+      }
+
+      img {
+        width: 90px;
+      }
+
+      .removeSplash {
+        transform: translateY(-100);
+      }
+      .section {
+        width: 80vw;
+        padding: 3em;
+        margin: 0 auto;
+        height: calc(100vh - 6em);
+        text-align: center;
+        display: grid;
+        place-content: center;
+
+        h1 {
+          font-size: 3rem;
+          opacity: 1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="splash">
+      <img src="rings.svg" alt="Ring Animations" srcset="" />
+    </div>
+
+    <section>
+      <h1>Coding is fantastics.</h1>
+    </section>
+    <script>
+      const splash = document.querySelector(".splash");
+
+      const headline = document.querySelector("h1");
+
+      setTimeout(() => {
+        splash.classList.add("removeSplash");
+      }, 2000);
+    </script>
+  </body>
+</html>
