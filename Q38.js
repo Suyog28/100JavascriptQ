@@ -1,5 +1,9 @@
 //Q38.Write a program that simulates rolling a dice.
 
+const prompt = require('prompt-sync')();
+
+const numberOfDice = prompt("Enter the number of dice: ");
+const sidesInDice = prompt("Enter the number of sides in dice: ");
 function rollADice(sidesInDice) {
     return Math.floor(Math.random() * sidesInDice) + 1;
 }
@@ -15,5 +19,4 @@ function multipleDice(numberOfDice, sidesInDice) {
 }
 
 
-
-console.log(multipleDice(2, 4));
+console.log(multipleDice(numberOfDice, sidesInDice));
