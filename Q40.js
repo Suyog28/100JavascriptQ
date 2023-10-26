@@ -1,6 +1,7 @@
 //Q40.Build a number guessing game where the computer provides hints like "too high" or "too low" to help the player guess the correct number
 
 const prompt = require("prompt-sync")();
+
 function randomNumber() {
     return Math.floor(Math.random() * 100) + 1;
 }
